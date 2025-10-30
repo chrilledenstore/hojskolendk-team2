@@ -6,10 +6,11 @@ import Heading from "../components/Heading.astro";
 import Text from "../components/Text.astro";
 import Button from "../components/Button.astro";
 import Star from "../../public/imgs/star.svg";
+import Blogcard from "../components/Blogcard.astro";
 ---
 
 <MainLayout title="Titel">
-  <main class="container mx-auto">
+  <main class="overflow-hidden">
     <section id="hero">
       <div>herobillede</div>
       <div class="text-center">
@@ -18,7 +19,7 @@ import Star from "../../public/imgs/star.svg";
       <Heading>dit livs eventyr&#33;</Heading>
     </section>
 
-    <section id="kortsektion" class="bg-brown p-10 pt-15 pb-15 text-beige-light">
+    <section id="kortsektion" class="bg-brown p-5 pt-15 pb-15 text-beige-light">
       <article id="kort" class="text-center mb-20">
         <Heading font="ofelia" size="display">VÆLG DIT EVENTYR</Heading>
         <div class="w-auto mt-5">
@@ -27,30 +28,32 @@ import Star from "../../public/imgs/star.svg";
       </article>
 
       <article id="info-review">
-        <aside class="flex flex-col gap-10 text-center mb-20 w-60 m-auto">
-          <div>
-            <Heading font="ofelia" size="display">INFOMØDER</Heading>
-            <Text teksttype="body">Kig forbi et af vores hyggelige infomøder i København, Aarhus eller online - vi glæder os til at møde dig&#33;</Text>
-          </div>
+        <aside class="text-center mb-20 m-auto">
+          <Heading font="ofelia" size="display">INFOMØDER</Heading>
+          <div class="w-60 m-auto flex flex-col gap-5 mb-15">
+            <p>
+              <Text teksttype="body">Kig forbi et af vores hyggelige infomøder i København, Aarhus eller online - vi glæder os til at møde dig&#33;</Text>
+            </p>
 
-          <div>
-            <Heading font="open" size="medium">KØBENHAVN</Heading>
-            <Text teksttype="body">18. November 2025 // Kl. 17-19</Text>
+            <div>
+              <Heading font="open" size="medium">KØBENHAVN</Heading>
+              <Text teksttype="body">18. November 2025 // Kl. 17-19</Text>
+            </div>
+            <div>
+              <Heading font="open" size="medium">AARHUS</Heading>
+              <Text teksttype="body">6. November 2025 // Kl. 17-19</Text>
+            </div>
+            <div>
+              <Heading font="open" size="medium">ONLINE INFOMØDE</Heading>
+              <Text teksttype="body">12. November 2025 // Kl. 17-19</Text>
+              <Text teksttype="body">10. November 2025 // Kl. 17-19</Text>
+            </div>
           </div>
-          <div>
-            <Heading font="open" size="medium">AARHUS</Heading>
-            <Text teksttype="body">6. November 2025 // Kl. 17-19</Text>
-          </div>
-          <div>
-            <Heading font="open" size="medium">ONLINE INFOMØDE</Heading>
-            <Text teksttype="body">12. November 2025 // Kl. 17-19</Text>
-            <Text teksttype="body">10. November 2025 // Kl. 17-19</Text>
-          </div>
-          <Button>TILMELD DIG INFOMØDET</Button>
+          <div class="m-auto"><Button variant="orange" size="medium">TILMELD DIG INFOMØDET</Button></div>
         </aside>
 
         <aside class="w-90 m-auto flex flex-col gap-15">
-          <div>
+          <div class="">
             <div class="flex flex-row gap-5 m-auto place-content-center">
               <Star width={35} />
               <Star width={35} />
@@ -155,10 +158,43 @@ import Star from "../../public/imgs/star.svg";
         </div>
       </article>
     </section>
-    <section>
-      <Heading>BLOG</Heading>
-      <article>blogcards her</article>
-      <div>knap</div>
+    <section class="bg-beige-light p-10 overflow-hidden">
+      <Heading font="ofelia" size="display">BLOG</Heading>
+      <article id="blogscroll" class="mt-10 mb-10 flex flex-row gap-5 overflow-x-auto snap-x snap-mandatory py-4">
+        <Blogcard>
+          <img src="/imgs/boatarm.png" alt="" />
+          <Heading font="ofelia" size="small">DIT SABBATÅR - MAKE THE MOST OF IT</Heading>
+          <Text>Hvis du skal ha dig et (eller flere) sabbatår, drømmer du sikkert om at det bliver verdens fedeste år. For lige nøjagtigt dig &#45; og det forstår vi godt. Men…</Text>
+        </Blogcard>
+
+        <Blogcard>
+          <img src="/imgs/failboard.png" alt="" />
+          <Heading font="ofelia" size="small">GLEM JAGTEN PÅ LYKKE</Heading>
+          <Text>Hvordan kan det være at flere mennesker end nogensinde oplever stress, angst, depression, ensomhed, m.v. når vi lever i en tid med mere velstand, flere muligheder og et højere uddannelsesniveau…</Text>
+        </Blogcard>
+        <Blogcard>
+          <img src="/imgs/groupfoto.png" alt="" />
+          <Heading font="ofelia" size="small">TANKER FRA EN UBEGRIBELIG TID - 17. MARTS 2020</Heading>
+          <Text>For 11 år siden tog jeg de første skridt for at realisere en drøm. En drøm om at skabe et arbejdsliv med dyb mening, fyldt med passion og livsglæde. Et…</Text>
+        </Blogcard>
+        <Blogcard>
+          <img src="/imgs/boatarm.png" alt="" />
+          <Heading font="ofelia" size="small">DIT SABBATÅR - MAKE THE MOST OF IT</Heading>
+          <Text>Hvis du skal ha dig et (eller flere) sabbatår, drømmer du sikkert om at det bliver verdens fedeste år. For lige nøjagtigt dig &#45; og det forstår vi godt. Men…</Text>
+        </Blogcard>
+
+        <Blogcard>
+          <img src="/imgs/failboard.png" alt="" />
+          <Heading font="ofelia" size="small">GLEM JAGTEN PÅ LYKKE</Heading>
+          <Text>Hvordan kan det være at flere mennesker end nogensinde oplever stress, angst, depression, ensomhed, m.v. når vi lever i en tid med mere velstand, flere muligheder og et højere uddannelsesniveau…</Text>
+        </Blogcard>
+        <Blogcard>
+          <img src="/imgs/groupfoto.png" alt="" />
+          <Heading font="ofelia" size="small">TANKER FRA EN UBEGRIBELIG TID - 17. MARTS 2020</Heading>
+          <Text>For 11 år siden tog jeg de første skridt for at realisere en drøm. En drøm om at skabe et arbejdsliv med dyb mening, fyldt med passion og livsglæde. Et…</Text>
+        </Blogcard>
+      </article>
+      <Button variant="orange" size="medium">SE FLERE BLOGS</Button>
     </section>
     <section class="bg-beige-dark pt-5 pb-5">
       <article class="flex flex-col gap-5 p-10">
@@ -178,19 +214,19 @@ import Star from "../../public/imgs/star.svg";
         </Text>
         <Text>At rejse med en højskole er ikke blot et eventyr ud i verden &#45; det er også en spændende rejse i forhold til dig og din personlige udvikling.</Text>
       </article>
-      <article>
+      <article class="hidden">
         <img src="/imgs/vertocean.png" alt="" />
       </article>
-      <article>
+      <article class="hidden">
         <img src="/imgs/vertvandfald.png" alt="" />
       </article>
-      <article>
+      <article class="hidden">
         <img src="/imgs/mountain.png" alt="" />
       </article>
-      <article>
+      <article class="hidden">
         <img src="/imgs/beachjump.png" alt="" />
       </article>
-      <article>
+      <article class="hidden">
         <img src="/imgs/boatsquare.png" alt="" />
       </article>
       <article class="p-10 flex flex-col gap-5">
