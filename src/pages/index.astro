@@ -11,24 +11,34 @@ import Blogcard from "../components/Blogcard.astro";
 
 <MainLayout title="Höjskolendk">
   <main class="overflow-hidden">
-    <section id="hero">
-      <div>herobillede</div>
-      <div class="text-center">
-        <img src="/imgs/herotekst.svg" alt="Højskolendk" />
-      </div>
-      <Heading>dit livs eventyr&#33;</Heading>
+    <section id="hero" class="heroparallax bg-[url(/imgs/heroimgback.png)] bg-cover bg-center h-screen w-full overflow-hidden grid grid-cols-1 text-beige-light lg:h-[70rem] lg:min-[background-position-y:-40vh] lg:max-[background-position-y:-80vh]">
+      <article class="h-full text-center">
+        <div id="herovideo" class="relative h-100 overflow-hidden" style="-webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 65%, rgba(0,0,0,0) 100%); mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 65%, rgba(0,0,0,0) 100%);">
+          <video src="/imgs/herovid.mp4" class="absolute inset-0 w-full h-full object-cover hidden lg:block"></video>
+          <video src="/imgs/heromobile.mp4" class="absolute inset-0 w-full h-full object-cover lg:hidden"></video>
+        </div>
+        <div class="col-start-1 row-start-1 middleground hidden"><img src="/imgs/heroimgmiddle.webp" alt="" class="object-contain" /></div>
+        <div class="col-start-1 row-start-1 foreground hidden"><img src="/imgs/heroimgfront.webp" alt="" /></div>
+
+        <div class="m-auto col-start-1 row-start-1 flex flex-col gap-5 text-white">
+          <img src="/imgs/herotekst.svg" alt="Højskolendk" class="m-auto scale-100 lg:scale-200" />
+
+          <Heading font="open" size="hero">dit livs eventyr&#33;</Heading>
+        </div>
+      </article>
     </section>
 
     <section id="kortsektion" class="bg-brown p-5 pt-15 pb-15 text-beige-light">
       <article id="kort" class="text-center mb-20">
         <Heading font="ofelia" size="display">VÆLG DIT EVENTYR</Heading>
-        <div class="w-auto mt-5">
+        <div class="w-auto mt-5 mb-5 lg:w-250 m-auto">
           <img src="/imgs/kort.png" alt="kort" />
         </div>
+        <div class="m-auto"><Button variant="orange" size="medium">SE FLERE REJSER</Button></div>
       </article>
 
-      <article id="info-review">
-        <aside class="text-center mb-20 m-auto">
+      <article id="info-review" class="lg:grid lg:grid-cols-2 lg:mt-30">
+        <aside class="text-center mb-20 m-auto lg:col-start-1">
           <Heading font="ofelia" size="display">INFOMØDER</Heading>
           <div class="w-60 m-auto flex flex-col gap-5 mb-15">
             <p>
@@ -52,7 +62,7 @@ import Blogcard from "../components/Blogcard.astro";
           <div class="m-auto"><Button variant="orange" size="medium">TILMELD DIG INFOMØDET</Button></div>
         </aside>
 
-        <aside class="w-90 m-auto flex flex-col gap-15">
+        <aside class="w-90 m-auto flex flex-col gap-15 lg:col-start-2">
           <div class="">
             <div class="flex flex-row gap-5 m-auto place-content-center">
               <Star width={35} />
@@ -72,95 +82,93 @@ import Blogcard from "../components/Blogcard.astro";
         </aside>
       </article>
     </section>
-    <section>
-      <article class="h-screen place-content-center grid pt-5 pb-5">
-        <div class="h-screen col-start-1 row-start-1 overflow-hidden">
-          <img src="/imgs/donutsten.png" alt="" class="object-cover h-full" />
-        </div>
-        <aside class="gap-5 col-start-1 row-start-1 place-content-center">
-          <div class="bg-beige-light w-90 m-auto p-10 text-center flex flex-col">
-            <Heading font="ofelia" size="display">Rejsen</Heading>
-            <div class="text-left flex flex-col gap-5 mt-5">
-              <Text>
-                Der venter dig et unikt rejseeventyr når du tager på højskole i udlandet, med et stærkt sammenhold og fede rejseoplevelser. Med udgangspunkt i højskolens to grundværdier fællesskab og dannelse, kan du på højskole i udlandet bruge din
-                sabbatår rejse på fx vilde adventure- og naturoplevelser, kulturprojekter, lære sprog og spændende personlig udvikling der giver dig mere selvtillid, selvindsigt og selvværd. Glæd dig også til inspirerende undervisning, der levende og
-                aktivt forener det lærende med det legende.
-              </Text>
-              <Text>
-                Vores elever beskriver HÖJSKOLENDK som ”eventyrlige dannelsesrejser med noget på hjerte”. Udover det fantastiske rejseeventyr handler vores højskoleophold i udlandet om dine drømme, mål og ønsker for livet. På inspirerende og aktiv
-                vis flytter du dine grænser og bliver en endnu stærkere udgave af dig selv. Vi tror på, at du kommer hjem med mere mod på alt hvad livet byder dig og er mere afklaret omkring hvad en meningsfuld fremtid er for dig.
-              </Text>
-              <Text>Tag på højskole i udlandet hvis du har du lyst til at opleve verden, udleve dine rejsedrømme i et skønt fællesskab, blive inspireret af dygtige og engagerede undervisere og få et eventyr for livet.</Text>
-            </div>
-          </div>
-        </aside>
+    <section class="h-screen grid grid-cols-1 grid-rows-1 lg:grid-cols-2">
+      <article class="col-start-1 row-start-1 overflow-hidden lg:col-start-2 lg:object-cover lg:h-auto">
+        <img src="/imgs/donutsten.png" alt="" class="object-cover h-full lg:h-auto" />
       </article>
-      <article class="h-screen place-content-center grid pt-5 pb-5">
-        <div class="h-screen col-start-1 row-start-1 overflow-hidden">
-          <img src="/imgs/baal.png" alt="" class="object-cover h-full" />
-        </div>
-        <aside class="gap-5 col-start-1 row-start-1 place-content-center">
-          <div class="bg-beige-light w-90 m-auto p-10 text-center flex flex-col">
-            <Heading font="ofelia" size="display">Tag på højskole i udlandet</Heading>
-            <div class="text-left flex flex-col gap-5 mt-5">
-              <Text>Når du rejser på højskole i udlandet med HÖJSKOLENDK…</Text>
-              <div class="flex flex-col gap-2 w-60 m-auto font-body text-[12px] lg:text-[16]">
-                <li>bliver du en del af et fantastisk fællesskab med et stærkt sammenhold.</li>
-                <li>får du masser af vilde naturoplevelser, adventure og spændende kulturmøder.</li>
-                <li>opdager du nye og stærke sider af dig selv, flytter grænser og får mere selvtillid.</li>
-                <li>rejser du altid med danske passionerede rejseledere og engagerede undervisere.</li>
-                <li>får du et uforglemmeligt, unikt og trygt rejseeventyr for livet.</li>
-              </div>
-              <Text>
-                Med vores unikke kombination af højskole, grupperejser, rejseeventyr, frihed, kulturmøder og spændende undervisning, vil vi inspirere dig til at finde ind til hvad der er vigtigst for dig i livet &#45; hvad du virkeligt brænder for og
-                kan mærke er meningsfuldt &#45; så du kan forfølge dine drømme.
-              </Text>
-              <Text>Gå på opdagelse her på siden efter dit livs eventyr &#45; på højskole i udlandet med HÖJSKOLENDK.</Text>
-              <Text>Velkommen!</Text>
-            </div>
+      <article class="gap-5 col-start-1 row-start-1 place-content-center lg:bg-beige-dark lg:col-start-1">
+        <div class="bg-beige-dark w-90 m-auto p-10 text-center flex flex-col lg:w-125 lg:text-left">
+          <Heading font="ofelia" size="display">Rejsen</Heading>
+          <div class="text-left flex flex-col gap-5 mt-5">
+            <Text>
+              Der venter dig et unikt rejseeventyr når du tager på højskole i udlandet, med et stærkt sammenhold og fede rejseoplevelser. Med udgangspunkt i højskolens to grundværdier fællesskab og dannelse, kan du på højskole i udlandet bruge din
+              sabbatår rejse på fx vilde adventure- og naturoplevelser, kulturprojekter, lære sprog og spændende personlig udvikling der giver dig mere selvtillid, selvindsigt og selvværd. Glæd dig også til inspirerende undervisning, der levende og
+              aktivt forener det lærende med det legende.
+            </Text>
+            <Text>
+              Vores elever beskriver HÖJSKOLENDK som ”eventyrlige dannelsesrejser med noget på hjerte”. Udover det fantastiske rejseeventyr handler vores højskoleophold i udlandet om dine drømme, mål og ønsker for livet. På inspirerende og aktiv vis
+              flytter du dine grænser og bliver en endnu stærkere udgave af dig selv. Vi tror på, at du kommer hjem med mere mod på alt hvad livet byder dig og er mere afklaret omkring hvad en meningsfuld fremtid er for dig.
+            </Text>
+            <Text>Tag på højskole i udlandet hvis du har du lyst til at opleve verden, udleve dine rejsedrømme i et skønt fællesskab, blive inspireret af dygtige og engagerede undervisere og få et eventyr for livet.</Text>
           </div>
-        </aside>
+        </div>
       </article>
     </section>
-    <section class="bg-beige-light p-10 pt-15 pb-15 flex flex-col gap-15">
-      <article class="w-80 m-auto">
+    <section class="h-screen grid grid-cols-1 grid-rows-1 lg:grid-cols-2">
+      <div class="col-start-1 row-start-1 overflow-hidden lg:col-start-1 lg:object-cover lg:h-auto">
+        <img src="/imgs/baal.png" alt="" class="object-cover h-full lg:h-auto" />
+      </div>
+      <article class="gap-5 col-start-1 row-start-1 place-content-center lg:bg-beige-dark lg:col-start-2">
+        <div class="bg-beige-dark w-90 m-auto p-10 text-center flex flex-col lg:w-125 lg:text-left">
+          <Heading font="ofelia" size="display">Tag på højskole i udlandet</Heading>
+          <div class="text-left flex flex-col gap-5 mt-5">
+            <Text>Når du rejser på højskole i udlandet med HÖJSKOLENDK…</Text>
+            <div class="flex flex-col gap-2 w-60 m-auto font-body text-[12px] lg:text-[16] lg:ml-5">
+              <li>bliver du en del af et fantastisk fællesskab med et stærkt sammenhold.</li>
+              <li>får du masser af vilde naturoplevelser, adventure og spændende kulturmøder.</li>
+              <li>opdager du nye og stærke sider af dig selv, flytter grænser og får mere selvtillid.</li>
+              <li>rejser du altid med danske passionerede rejseledere og engagerede undervisere.</li>
+              <li>får du et uforglemmeligt, unikt og trygt rejseeventyr for livet.</li>
+            </div>
+            <Text>
+              Med vores unikke kombination af højskole, grupperejser, rejseeventyr, frihed, kulturmøder og spændende undervisning, vil vi inspirere dig til at finde ind til hvad der er vigtigst for dig i livet &#45; hvad du virkeligt brænder for og
+              kan mærke er meningsfuldt &#45; så du kan forfølge dine drømme.
+            </Text>
+            <Text>Gå på opdagelse her på siden efter dit livs eventyr &#45; på højskole i udlandet med HÖJSKOLENDK.</Text>
+            <Text>Velkommen!</Text>
+          </div>
+        </div>
+      </article>
+    </section>
+    <section class="bg-beige-light p-10 pt-15 pb-15 flex flex-col gap-15 lg:grid lg:grid-cols-2 lg:grid-rows-2 lg:py-25 lg:px-25">
+      <article class="w-80 m-auto lg:col-start-2 lg:row-start-1 lg:w-100">
         <img src="/imgs/whoareweimg.svg" alt="" />
       </article>
-      <article class="text-center">
+      <article class="text-center lg:col-start-1 lg:row-start-1 lg:text-left lg:m-auto">
         <Heading font="ofelia" size="display">HVEM ER VI?</Heading>
-        <div class="text-left w-80 m-auto flex flex-col gap-5">
-          <Text>HÖJSKOLENDK er en dansk højskole for unge i alderen ca. 18-30 år.Vi brænder for oplevelser, fællesskab og mødet med nye mennesker og kulturer&#59; derfor laver vi eventyrlige højskoleophold i udlandet.</Text>
+        <div class="text-left w-80 m-auto flex flex-col gap-5 lg:w-95">
+          <Text>HÖJSKOLENDK er en dansk højskole for unge i alderen ca. 18-30 år. Vi brænder for oplevelser, fællesskab og mødet med nye mennesker og kulturer&#59; derfor laver vi eventyrlige højskoleophold i udlandet.</Text>
           <Text>HÖJSKOLENDK er noget for dig, hvis du vil på højskole i udlandet og er vild med højskolefællesskab og glæder dig til at lære om fremmede kulturer.</Text>
           <Text>Hvis du drømmer om at rejse med rygsæk på en fed grupperejse med andre skønne unge, og vil opleve et stærkt sammenhold og ønsker inspirerende og meningsfuld undervisning.</Text>
           <Text>Du er sikker på en tryg rejseoplevelse da vi er medlem af Rejsegarantifonden.</Text>
         </div>
       </article>
-      <article class="text-center place-content-center">
+      <article class="text-center place-content-center lg:col-start-1 lg:col-span-2 lg:row-start-2">
         <Heading font="ofelia" size="medium">SAMARBEJDSPARTNERE</Heading>
-        <aside id="logocontainer" class="mt-5 grid grid-cols-2 grid-rows-2 gap-5 m-auto">
-          <div class="place-content-center w-30 m-auto col-start-1 row-start-1"><img src="/imgs/rejsefonden.svg" alt="" /></div>
-          <div class="place-content-center w-30 m-auto col-start-2 row-start-1"><img src="/imgs/gouda.svg" alt="" /></div>
-          <div class="place-content-center w-30 m-auto col-start-1 row-start-2"><img src="/imgs/jyskrejse.svg" alt="" /></div>
-          <div class="place-content-center w-30 m-auto col-start-2 row-start-2"><img src="/imgs/neutral.svg" alt="" /></div>
+        <aside id="logocontainer" class="mt-5 grid grid-cols-2 grid-rows-2 gap-5 m-auto lg:flex lg:flex-row lg:justify-evenly lg:w-300 lg:m-auto lg:mt-10">
+          <div class="place-content-center w-30 m-auto col-start-1 row-start-1 lg:w-50"><img src="/imgs/rejsefonden.svg" alt="" /></div>
+          <div class="place-content-center w-30 m-auto col-start-2 row-start-1 lg:w-50"><img src="/imgs/gouda.svg" alt="" /></div>
+          <div class="place-content-center w-30 m-auto col-start-1 row-start-2 lg:w-50"><img src="/imgs/jyskrejse.svg" alt="" /></div>
+          <div class="place-content-center w-30 m-auto col-start-2 row-start-2 lg:w-50"><img src="/imgs/neutral.svg" alt="" /></div>
         </aside>
       </article>
     </section>
     <section>
-      <article class="bg-[url(/imgs/charityfoto.png)] bg-cover bg-right h-130">
+      <article class="bg-[url(/imgs/charityfoto.png)] bg-cover bg-right h-140 lg:bg-center">
         <div class="p-10 place-content-center bg-black/60 h-full flex flex-col gap-5">
-          <div class="text-center w-80 m-auto text-beige-light">
+          <div class="flex flex-col gap-5 text-center w-80 m-auto text-beige-light lg:text-left lg:mr-[20vw] lg:w-100">
             <Heading font="ofelia" size="display">VI GØR EN FORSKEL</Heading>
             <Text>Vi tror på at alle kan gøre en forskel &#45; selv en højskole fra Danmark.</Text>
             <Text>Vi støtter derfor Verdens Skoves arbejde med bevarelse og bæredugtig brug af verdens skove.</Text>
             <Text>Vi har allerede fredet 106.785 m2 regnskov. Det er vi stolte af i HÖJSKOLENDK.</Text>
+            <div class="m-auto place-content-center mt-20 lg:ml-0"><img src="/imgs/verdensskove.svg" alt="" class="m-auto" /></div>
           </div>
-          <div class="m-auto place-content-center"><img src="/imgs/verdensskove.svg" alt="" class="m-auto" /></div>
         </div>
       </article>
     </section>
-    <section class="bg-beige-light p-10 overflow-hidden">
+    <section class="bg-beige-light p-10 overflow-hidden lg:px-40 lg:py-20">
       <Heading font="ofelia" size="display">BLOG</Heading>
-      <article id="blogscroll" class="mt-10 mb-10 flex flex-row gap-5 overflow-x-auto snap-x snap-mandatory py-4">
+      <article id="blogscroll" class="mt-10 mb-10 flex flex-row gap-5 overflow-x-auto snap-x snap-mandatory py-4 lg:mb-20">
         <Blogcard>
           <img src="/imgs/boatarm.png" alt="" />
           <Heading font="ofelia" size="small">DIT SABBATÅR - MAKE THE MOST OF IT</Heading>
@@ -194,10 +202,10 @@ import Blogcard from "../components/Blogcard.astro";
           <Text>For 11 år siden tog jeg de første skridt for at realisere en drøm. En drøm om at skabe et arbejdsliv med dyb mening, fyldt med passion og livsglæde. Et…</Text>
         </Blogcard>
       </article>
-      <Button variant="orange" size="medium">SE FLERE BLOGS</Button>
+      <div class="lg:text-center"><Button variant="orange" size="medium">SE FLERE BLOGS</Button></div>
     </section>
-    <section class="bg-beige-dark pt-5 pb-5">
-      <article class="flex flex-col gap-5 p-10">
+    <section class="bg-beige-dark pt-5 pb-5 lg:grid lg:grid-cols-4 lg:grid-rows-4 lg:gap-5 lg:px-20 lg:py-20">
+      <article class="flex flex-col gap-5 p-10 lg:col-start-1 lg:col-span-2 lg:row-start-1">
         <Heading font="ofelia" size="display">Højskole i udlandet for unge</Heading>
         <Text>
           Drømmer du om at rejse på højskole i udlandet for unge? Når du rejser med HÖJSKOLENDK, får du dit livs eventyr og vi garanterer dig masser af fællesskab, fantastiske oplevelser og meningsfuld læring. Et højskoleophold i udlandet er noget,
@@ -214,22 +222,22 @@ import Blogcard from "../components/Blogcard.astro";
         </Text>
         <Text>At rejse med en højskole er ikke blot et eventyr ud i verden &#45; det er også en spændende rejse i forhold til dig og din personlige udvikling.</Text>
       </article>
-      <article class="hidden">
-        <img src="/imgs/vertocean.png" alt="" />
+      <article class="hidden lg:block lg:col-start-3 lg:row-start-1">
+        <img src="/imgs/vertocean.png" alt="" class="object-cover h-auto" />
       </article>
-      <article class="hidden">
-        <img src="/imgs/vertvandfald.png" alt="" />
+      <article class="hidden lg:block lg:col-start-4 lg:row-start-1">
+        <img src="/imgs/vertvandfald.png" alt="" class="object-cover h-auto" />
       </article>
-      <article class="hidden">
-        <img src="/imgs/mountain.png" alt="" />
+      <article class="hidden lg:block lg:col-start-3 lg:col-span-2 lg:row-start-2">
+        <img src="/imgs/mountain.png" alt="" class="object-cover h-auto" />
       </article>
-      <article class="hidden">
-        <img src="/imgs/beachjump.png" alt="" />
+      <article class="hidden lg:block lg:col-start-1 lg:col-span-2 lg:row-start-2">
+        <img src="/imgs/beachjump.png" alt="" class="object-cover h-auto" />
       </article>
-      <article class="hidden">
-        <img src="/imgs/boatsquare.png" alt="" />
+      <article class="hidden lg:block lg:col-start-1 lg:col-span-2 lg:row-start-3">
+        <img src="/imgs/boatsquare.png" alt="" class="object-cover h-auto" />
       </article>
-      <article class="p-10 flex flex-col gap-5">
+      <article class="p-10 flex flex-col gap-5 lg:col-start-3 lg:col-span-2 lg:row-start-3">
         <Heading font="ofelia" size="display">Uforglemmeligt højskoleophold i udlandet</Heading>
         <Text>
           HÖJSKOLENDK tilbyder alverdens skønne rejser og ophold og du kan både komme på højskoleophold i udlandet i løbet af året eller på højskole i udlandet i sommerferien. Begge muligheder er enormt populære blandt vores skønne højskoleelever.
@@ -241,32 +249,34 @@ import Blogcard from "../components/Blogcard.astro";
         <Text>Vores højskoleophold i løbet af året varer mellem 2-3 måneder. De rejser er oplagt for dig, der holder sabbatår og gerne vil ud og opleve verdenen hvor du udvikler dig selv på et personligt plan.</Text>
         <Text>Tag på højskole i udlandet med andre og få en uforglemmelig oplevelse. Vi tør godt love dig, at det bliver dit livs eventyr!</Text>
       </article>
-      <article class="p-10 flex flex-col gap-5">
-        <Heading font="ofelia" size="display">En højskole fyldt med oplevelser</Heading>
-        <Text>Vil du gerne på højskole i udlandet, tilbyder vi de mest attraktive højskoleophold i udlandet, hvor du besøger flere skønne og spændende lande og deltager i spændende og inspirerende undervisning og alverdens fede aktiviteter.</Text>
-        <Text>Din højskole rejse kan blandt andet indholde:</Text>
-        <aside class="grid grid-cols-3 grid-rows-2">
-          <div class="m-auto col-start-1 row-start-1 text-center">
+      <article class="p-10 flex flex-col gap-5 lg:col-start-1 lg:col-span-4">
+        <div class="lg:w-120 lg:m-auto flex flex-col gap-5">
+          <Heading font="ofelia" size="display">En højskole fyldt med oplevelser</Heading>
+          <Text>Vil du gerne på højskole i udlandet, tilbyder vi de mest attraktive højskoleophold i udlandet, hvor du besøger flere skønne og spændende lande og deltager i spændende og inspirerende undervisning og alverdens fede aktiviteter.</Text>
+          <Text>Din højskole rejse kan blandt andet indholde:</Text>
+        </div>
+        <aside class="grid grid-cols-3 grid-rows-2 lg:grid-cols-5 lg:grid-rows-1">
+          <div class="m-auto col-start-1 row-start-1 text-center lg:col-start-1">
             <img src="/imgs/teambulding.svg" alt="" class="w-15 m-auto mb-2" />
             <Heading font="ofelia" size="small">Teambuilding</Heading>
           </div>
 
-          <div class="m-auto col-start-2 row-start-1 text-center">
+          <div class="m-auto col-start-2 row-start-1 text-center lg:col-start-2">
             <img src="/imgs/kulturicon.svg" alt="" class="w-15 m-auto mb-2" />
             <Heading font="ofelia" size="small">Kulturprojekter</Heading>
           </div>
 
-          <div class="m-auto col-start-3 row-start-1 text-center">
+          <div class="m-auto col-start-3 row-start-1 text-center lg:col-start-3">
             <img src="/imgs/friugeicon.svg" alt="" class="w-15 m-auto mb-2" />
             <Heading font="ofelia" size="small">Friuger</Heading>
           </div>
 
-          <div class="m-auto col-start-1 col-span-2 row-start-2 text-center">
+          <div class="m-auto col-start-1 col-span-2 row-start-2 text-center lg:col-start-4 lg:col-span-1 lg:row-start-1">
             <img src="/imgs/kulturxpicon.svg" alt="" class="w-15 m-auto mb-2" />
             <Heading font="ofelia" size="small">Kulturoplevelser</Heading>
           </div>
 
-          <div class="m-auto col-start-2 col-span-2 row-start-2 text-center">
+          <div class="m-auto col-start-2 col-span-2 row-start-2 text-center lg:col-start-5 lg:col-span-1 lg:row-start-1">
             <img src="/imgs/natureicon.svg" alt="" class="w-15 m-auto mb-2" />
             <Heading font="ofelia" size="small">Naturoplevelser</Heading>
           </div>
@@ -275,3 +285,17 @@ import Blogcard from "../components/Blogcard.astro";
     </section>
   </main>
 </MainLayout>
+
+<script>
+  /* Import af Motion One bibliotek */
+  import { animate, stagger, inView, scroll } from "motion";
+
+  scroll(animate(".middleground", { y: [950, -600] }), {
+    target: document.querySelector(".heroparallax"),
+    offset: ["start end", "end start"],
+  });
+  scroll(animate(".foreground", { y: [800, -1800] }), {
+    target: document.querySelector(".heroparallax"),
+    offset: ["start end", "end start"],
+  });
+</script>
