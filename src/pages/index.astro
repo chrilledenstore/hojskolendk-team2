@@ -11,19 +11,20 @@ import Blogcard from "../components/Blogcard.astro";
 
 <MainLayout title="Höjskolendk">
   <main class="overflow-hidden">
-    <section id="hero" class="heroparallax bg-[url(/imgs/heroimgback.png)] bg-cover bg-center h-screen w-full overflow-hidden grid grid-cols-1 text-beige-light lg:h-[70rem] lg:min-[background-position-y:-40vh] lg:max-[background-position-y:-80vh]">
-      <article class="h-full text-center">
-        <div id="herovideo" class="relative h-100 overflow-hidden" style="-webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 65%, rgba(0,0,0,0) 100%); mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 65%, rgba(0,0,0,0) 100%);">
-          <video src="/imgs/herovid.mp4" class="absolute inset-0 w-full h-full object-cover hidden lg:block"></video>
-          <video src="/imgs/heromobile.mp4" class="absolute inset-0 w-full h-full object-cover lg:hidden"></video>
+    <section id="hero" class="heroparallax h-screen w-full overflow-hidden grid grid-cols-1 text-beige-light lg:h-[70rem]">
+      <div class="z-5 bg-[url(/imgs/heroimgback.png)] bg-cover bg-center w-auto h-auto col-start-1 row-start-1 background lg:min-[background-position-y:-40vh] lg:max-[background-position-y:-80vh]"></div>
+      <div class="z-5 bg-[url(/imgs/heroimgmiddle.webp)] bg-cover bg-center w-auto h-auto col-start-1 row-start-1 middleground"></div>
+      <div class="z-5 bg-[url(/imgs/heroimgfront.webp)] bg-cover bg-bottom w-auto h-auto col-start-1 row-start-1 foreground"></div>
+      <article class="w-full h-full text-center z-40 absolute">
+        <div id="herovideo" class="relative h-140 overflow-hidden" style="-webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 20%, rgba(0,0,0,0) 100%); mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 20%, rgba(0,0,0,0) 100%);">
+          <video src="/imgs/herovid.mp4" class="absolute inset-0 w-full h-full object-cover hidden lg:block" autoplay muted playsinline loop></video>
+          <video src="/imgs/heromobile.mp4" class="absolute inset-0 w-full h-full object-cover lg:hidden" autoplay muted playsinline loop></video>
         </div>
-        <div class="col-start-1 row-start-1 middleground hidden"><img src="/imgs/heroimgmiddle.webp" alt="" class="object-contain" /></div>
-        <div class="col-start-1 row-start-1 foreground hidden"><img src="/imgs/heroimgfront.webp" alt="" /></div>
 
-        <div class="m-auto col-start-1 row-start-1 flex flex-col gap-5 text-white">
-          <img src="/imgs/herotekst.svg" alt="Højskolendk" class="m-auto scale-100 lg:scale-200" />
+        <div class="m-auto col-start-1 row-start-1 flex flex-col gap-5 text-white -mt-60">
+          <img src="/imgs/herotekst.svg" alt="Højskolendk" class="m-auto scale-100 lg:scale-200 animate-fade-up animate-delay-500" />
 
-          <Heading font="open" size="hero">dit livs eventyr&#33;</Heading>
+          <div class="animate-fade-up animate-delay-1000"><Heading font="open" size="hero">dit livs eventyr&#33;</Heading></div>
         </div>
       </article>
     </section>
@@ -83,11 +84,11 @@ import Blogcard from "../components/Blogcard.astro";
       </article>
     </section>
     <section class="h-screen grid grid-cols-1 grid-rows-1 lg:grid-cols-2">
-      <article class="col-start-1 row-start-1 overflow-hidden lg:col-start-2 lg:object-cover lg:h-auto">
-        <img src="/imgs/donutsten.png" alt="" class="object-cover h-full lg:h-auto" />
+      <article class="parallaxsektion2 col-start-1 row-start-1 overflow-hidden z-0 lg:col-start-2 lg:object-cover lg:h-auto">
+        <div class="donutsten w-auto h-full lg:h-auto"><img src="/imgs/donutsten.png" alt="" class="object-cover h-full scale-130 lg:h-auto" /></div>
       </article>
-      <article class="gap-5 col-start-1 row-start-1 place-content-center lg:bg-beige-dark lg:col-start-1">
-        <div class="bg-beige-dark w-90 m-auto p-10 text-center flex flex-col lg:w-125 lg:text-left">
+      <article class="gap-5 col-start-1 row-start-1 z-40 place-content-center lg:bg-beige-dark lg:col-start-1">
+        <div id="p2text1" class="bg-beige-dark w-90 m-auto p-10 text-center flex flex-col lg:w-125 lg:text-left">
           <Heading font="ofelia" size="display">Rejsen</Heading>
           <div class="text-left flex flex-col gap-5 mt-5">
             <Text>
@@ -105,11 +106,11 @@ import Blogcard from "../components/Blogcard.astro";
       </article>
     </section>
     <section class="h-screen grid grid-cols-1 grid-rows-1 lg:grid-cols-2">
-      <div class="col-start-1 row-start-1 overflow-hidden lg:col-start-1 lg:object-cover lg:h-auto">
-        <img src="/imgs/baal.png" alt="" class="object-cover h-full lg:h-auto" />
+      <div class="parallaxsektion3 z-0 col-start-1 row-start-1 overflow-hidden lg:col-start-1 lg:object-cover lg:h-auto">
+        <div class="baal w-auto h-full lg:h-auto"><img src="/imgs/baal.png" alt="" class="object-cover h-full scale-130 lg:h-auto" /></div>
       </div>
-      <article class="gap-5 col-start-1 row-start-1 place-content-center lg:bg-beige-dark lg:col-start-2">
-        <div class="bg-beige-dark w-90 m-auto p-10 text-center flex flex-col lg:w-125 lg:text-left">
+      <article class="gap-5 col-start-1 row-start-1 z-40 place-content-center lg:bg-beige-dark lg:col-start-2">
+        <div id="p2text2" class="bg-beige-dark w-90 m-auto p-10 text-center flex flex-col lg:w-125 lg:text-left">
           <Heading font="ofelia" size="display">Tag på højskole i udlandet</Heading>
           <div class="text-left flex flex-col gap-5 mt-5">
             <Text>Når du rejser på højskole i udlandet med HÖJSKOLENDK…</Text>
@@ -130,11 +131,11 @@ import Blogcard from "../components/Blogcard.astro";
         </div>
       </article>
     </section>
-    <section class="bg-beige-light p-10 pt-15 pb-15 flex flex-col gap-15 lg:grid lg:grid-cols-2 lg:grid-rows-2 lg:py-25 lg:px-25">
+    <section class="whotop bg-beige-light p-10 pt-15 pb-15 flex flex-col gap-15 lg:grid lg:grid-cols-2 lg:grid-rows-2 lg:py-25 lg:px-25">
       <article class="w-80 m-auto lg:col-start-2 lg:row-start-1 lg:w-100">
         <img src="/imgs/whoareweimg.svg" alt="" />
       </article>
-      <article class="text-center lg:col-start-1 lg:row-start-1 lg:text-left lg:m-auto">
+      <article class="whotop text-center lg:col-start-1 lg:row-start-1 lg:text-left lg:m-auto">
         <Heading font="ofelia" size="display">HVEM ER VI?</Heading>
         <div class="text-left w-80 m-auto flex flex-col gap-5 lg:w-95">
           <Text>HÖJSKOLENDK er en dansk højskole for unge i alderen ca. 18-30 år. Vi brænder for oplevelser, fællesskab og mødet med nye mennesker og kulturer&#59; derfor laver vi eventyrlige højskoleophold i udlandet.</Text>
@@ -143,13 +144,13 @@ import Blogcard from "../components/Blogcard.astro";
           <Text>Du er sikker på en tryg rejseoplevelse da vi er medlem af Rejsegarantifonden.</Text>
         </div>
       </article>
-      <article class="text-center place-content-center lg:col-start-1 lg:col-span-2 lg:row-start-2">
+      <article class="partners text-center place-content-center lg:col-start-1 lg:col-span-2 lg:row-start-2">
         <Heading font="ofelia" size="medium">SAMARBEJDSPARTNERE</Heading>
         <aside id="logocontainer" class="mt-5 grid grid-cols-2 grid-rows-2 gap-5 m-auto lg:flex lg:flex-row lg:justify-evenly lg:w-300 lg:m-auto lg:mt-10">
-          <div class="place-content-center w-30 m-auto col-start-1 row-start-1 lg:w-50"><img src="/imgs/rejsefonden.svg" alt="" /></div>
-          <div class="place-content-center w-30 m-auto col-start-2 row-start-1 lg:w-50"><img src="/imgs/gouda.svg" alt="" /></div>
-          <div class="place-content-center w-30 m-auto col-start-1 row-start-2 lg:w-50"><img src="/imgs/jyskrejse.svg" alt="" /></div>
-          <div class="place-content-center w-30 m-auto col-start-2 row-start-2 lg:w-50"><img src="/imgs/neutral.svg" alt="" /></div>
+          <div id="partner1" class="place-content-center w-30 m-auto col-start-1 row-start-1 lg:w-50"><img src="/imgs/rejsefonden.svg" alt="" /></div>
+          <div id="partner2" class="place-content-center w-30 m-auto col-start-2 row-start-1 lg:w-50"><img src="/imgs/gouda.svg" alt="" /></div>
+          <div id="partner3" class="place-content-center w-30 m-auto col-start-1 row-start-2 lg:w-50"><img src="/imgs/jyskrejse.svg" alt="" /></div>
+          <div id="partner4" class="place-content-center w-30 m-auto col-start-2 row-start-2 lg:w-50"><img src="/imgs/neutral.svg" alt="" /></div>
         </aside>
       </article>
     </section>
@@ -166,7 +167,7 @@ import Blogcard from "../components/Blogcard.astro";
         </div>
       </article>
     </section>
-    <section class="bg-beige-light p-10 overflow-hidden lg:px-40 lg:py-20">
+    <section id="blogsection" class="bg-beige-light p-10 overflow-hidden lg:px-40 lg:py-20">
       <Heading font="ofelia" size="display">BLOG</Heading>
       <article id="blogscroll" class="mt-10 mb-10 flex flex-row gap-5 overflow-x-auto snap-x snap-mandatory py-4 lg:mb-20">
         <Blogcard>
@@ -205,7 +206,7 @@ import Blogcard from "../components/Blogcard.astro";
       <div class="lg:text-center"><Button variant="orange" size="medium">SE FLERE BLOGS</Button></div>
     </section>
     <section class="bg-beige-dark pt-5 pb-5 lg:grid lg:grid-cols-4 lg:grid-rows-4 lg:gap-5 lg:px-20 lg:py-20">
-      <article class="flex flex-col gap-5 p-10 lg:col-start-1 lg:col-span-2 lg:row-start-1">
+      <article id="p3text1" class="flex flex-col gap-5 p-10 lg:col-start-1 lg:col-span-2 lg:row-start-1">
         <Heading font="ofelia" size="display">Højskole i udlandet for unge</Heading>
         <Text>
           Drømmer du om at rejse på højskole i udlandet for unge? Når du rejser med HÖJSKOLENDK, får du dit livs eventyr og vi garanterer dig masser af fællesskab, fantastiske oplevelser og meningsfuld læring. Et højskoleophold i udlandet er noget,
@@ -222,22 +223,22 @@ import Blogcard from "../components/Blogcard.astro";
         </Text>
         <Text>At rejse med en højskole er ikke blot et eventyr ud i verden &#45; det er også en spændende rejse i forhold til dig og din personlige udvikling.</Text>
       </article>
-      <article class="hidden lg:block lg:col-start-3 lg:row-start-1">
-        <img src="/imgs/vertocean.png" alt="" class="object-cover h-auto" />
+      <article class="bg-[url(/imgs/vertocean.png)] bg-cover bg-center hidden lg:block lg:col-start-3 lg:row-start-1 lg:w-auto lg:h-auto">
+        <!-- <img src="/imgs/vertocean.png" alt="" class="object-cover h-auto" /> -->
       </article>
-      <article class="hidden lg:block lg:col-start-4 lg:row-start-1">
-        <img src="/imgs/vertvandfald.png" alt="" class="object-cover h-auto" />
+      <article class="bg-[url(/imgs/vertvandfald.png)] bg-cover bg-center hidden lg:block lg:col-start-4 lg:row-start-1">
+        <!-- <img src="/imgs/vertvandfald.png" alt="" class="object-cover h-auto" /> -->
       </article>
-      <article class="hidden lg:block lg:col-start-3 lg:col-span-2 lg:row-start-2">
-        <img src="/imgs/mountain.png" alt="" class="object-cover h-auto" />
+      <article class="bg-[url(/imgs/mountain.png)] bg-cover bg-center hidden lg:block lg:col-start-3 lg:col-span-2 lg:row-start-2">
+        <!-- <img src="/imgs/mountain.png" alt="" class="object-cover h-auto" /> -->
       </article>
-      <article class="hidden lg:block lg:col-start-1 lg:col-span-2 lg:row-start-2">
-        <img src="/imgs/beachjump.png" alt="" class="object-cover h-auto" />
+      <article class="bg-[url(/imgs/beachjump.png)] bg-cover bg-center hidden lg:block lg:col-start-1 lg:col-span-2 lg:row-start-2">
+        <!-- <img src="/imgs/beachjump.png" alt="" class="object-cover h-auto" /> -->
       </article>
-      <article class="hidden lg:block lg:col-start-1 lg:col-span-2 lg:row-start-3">
-        <img src="/imgs/boatsquare.png" alt="" class="object-cover h-auto" />
+      <article class="bg-[url(/imgs/boatsquare.png)] bg-cover bg-center hidden lg:block lg:col-start-1 lg:col-span-2 lg:row-start-3">
+        <!-- <img src="/imgs/boatsquare.png" alt="" class="object-cover h-auto" /> -->
       </article>
-      <article class="p-10 flex flex-col gap-5 lg:col-start-3 lg:col-span-2 lg:row-start-3">
+      <article id="p3text2" class="p-10 flex flex-col gap-5 lg:col-start-3 lg:col-span-2 lg:row-start-3">
         <Heading font="ofelia" size="display">Uforglemmeligt højskoleophold i udlandet</Heading>
         <Text>
           HÖJSKOLENDK tilbyder alverdens skønne rejser og ophold og du kan både komme på højskoleophold i udlandet i løbet af året eller på højskole i udlandet i sommerferien. Begge muligheder er enormt populære blandt vores skønne højskoleelever.
@@ -290,12 +291,88 @@ import Blogcard from "../components/Blogcard.astro";
   /* Import af Motion One bibliotek */
   import { animate, stagger, inView, scroll } from "motion";
 
-  scroll(animate(".middleground", { y: [950, -600] }), {
+  inView("#info-review", () => {
+    animate("#info-review", { opacity: [0, 1] }, { duration: 1 }),
+      {
+        target: document.querySelector("#info-review"),
+        offset: ["60vh", "60vh"],
+      };
+  });
+
+  inView("#p2text1", () => {
+    animate("#p2text1", { x: [-100, 0], opacity: [0, 1] }, { duration: 1 }),
+      {
+        target: document.querySelector("#p2text1"),
+        offset: ["60vh", "60vh"],
+      };
+  });
+
+  inView("#p2text2", () => {
+    animate("#p2text2", { x: [100, 0], opacity: [0, 1] }, { duration: 1 }),
+      {
+        target: document.querySelector("#p2text2"),
+        offset: ["60vh", "50vh"],
+      };
+  });
+
+  inView(".whotop", () => {
+    animate(".whotop", { y: [25, 0], opacity: [0, 1] }, { duration: 0.5 });
+  });
+
+  inView(".partners", () => {
+    animate(".partners", { opacity: [0, 1] }, { duration: 0.5 });
+  });
+
+  inView(".partners", () => {
+    animate("#logocontainer div", { y: [25, 0], opacity: [0, 1] }, { delay: stagger(0.1, { startDelay: 0.5 }) });
+  });
+
+  inView("#blogsection", () => {
+    animate("#blogsection", { opacity: [0, 1] }, { duration: 0.5 });
+  });
+
+  inView("#blogscroll", () => {
+    animate("#blogscroll article", { y: [25, 0], opacity: [0, 1] }, { delay: stagger(0.2, { startDelay: 0.2 }) });
+  });
+
+  inView("#p3text1", () => {
+    animate("#p3text1", { x: [-100, 0], opacity: [0, 1] }, { duration: 1 }),
+      {
+        target: document.querySelector("#p3text1"),
+        offset: ["60vh", "60vh"],
+      };
+  });
+
+  inView("#p3text2", () => {
+    animate("#p3text2", { x: [100, 0], opacity: [0, 1] }, { duration: 1 }),
+      {
+        target: document.querySelector("#p3text2"),
+        offset: ["60vh", "50vh"],
+      };
+  });
+
+  scroll(animate(".background", { y: [-10, 10] }), {
     target: document.querySelector(".heroparallax"),
     offset: ["start end", "end start"],
   });
-  scroll(animate(".foreground", { y: [800, -1800] }), {
+
+  scroll(animate(".middleground", { y: [0, -20] }), {
     target: document.querySelector(".heroparallax"),
+    offset: ["start end", "end start"],
+  });
+
+  scroll(animate(".foreground", { y: [500, 150] }), {
+    target: document.querySelector(".heroparallax"),
+    offset: ["start end", "end start"],
+  });
+
+  scroll(animate(".donutsten", { y: [150, -300] }), {
+    target: document.querySelector(".parallaxsektion2"),
+    offset: ["start end", "end start"],
+  });
+
+  scroll(animate(".baal", { y: [150, -300] }), {
+    target: document.querySelector(".parallaxsektion3"),
     offset: ["start end", "end start"],
   });
 </script>
